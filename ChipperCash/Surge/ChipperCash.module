@@ -1,13 +1,14 @@
 #!name=Chipper 辅助
-#!desc=1.跳过人脸认证 2.显示入金界面
+#!desc=1.显示入金界面 2.获取Data
 
 
 [MITM]
-hostname = %APPEND% auth.chippercash.com, api.chippercash.com
+hostname = %APPEND% api.chippercash.com
 
 [Script]
-# 跳过人脸认证
-http-response ^https:\/\/auth\.chippercash\.com\/session\/status(?:\?.*)?$ script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/skipFrozen.js,requires-body=1
+# 获取Data
+http-request ^https:\/\/api\.chippercash\.com\/v1\/assets\/historical-prices script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/getData.js, requires-body=1
 
 # 展示入金界面
-http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration(?:\?.*)?$ script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/showUSDXDeposits.js,requires-body=1
+http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration(?:\?.*)?$ script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/showUSDXDeposits.js, requires-body=1
+
