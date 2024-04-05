@@ -12,10 +12,10 @@ if (req && req.headers) {
     let encodedMailBody = encodeURIComponent(mailBody);
 
     // 构造 mailto: 链接，确保邮件主体被正确编码
-    let mailtoUrl = `mailto:niuniujun@argun.cc?subject=ChipperCash&body=${encodedMailBody}`;
+    let mailtoUrl = `mailto:niuniujun@argun.cc?subject=Chipper Cash&body=${encodedMailBody}`;
 
     // 发送通知
-    $notification.post("ChipperCash", "点击查看详情", "📧 发送到邮箱", { "open-url": mailtoUrl });
+    $notification.post("Chipper Cash", "点击查看详情", "📧 发送到邮箱", {"open-url": mailtoUrl});
 
     $done({});
 } else {
