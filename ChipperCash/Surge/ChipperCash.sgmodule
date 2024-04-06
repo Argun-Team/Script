@@ -7,8 +7,8 @@ hostname = %APPEND% api.chippercash.com
 
 [Script]
 # 获取Data
-http-request ^https:\/\/api\.chippercash\.com\/v1\/referrals\/code(?:\?.*)?$ script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/getData.js, requires-body=1
+http-request ^https:\/\/api\.chippercash\.com\/v1\/referrals\/code script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/getData.js, requires-body=1
 
 # 展示入金界面
-http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration(?:\?.*)?$ script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/showUSDXDeposits.js, requires-body=1
+http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/showUSDXDeposits.js, requires-body=1
 
