@@ -14,4 +14,3 @@ http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configurati
 
 # 跳过人脸认证
 http-response ^https:\/\/auth\.chippercash\.com\/session\/status script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/skipFrozen.js,requires-body=1
-https://auth.chippercash.com/session/status
