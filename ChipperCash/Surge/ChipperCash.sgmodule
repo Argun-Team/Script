@@ -3,7 +3,7 @@
 
 
 [MITM]
-hostname = %APPEND% api.chippercash.com
+hostname = %APPEND% api.chippercash.com auth.chippercash.com
 
 [Script]
 # 获取Data
@@ -12,3 +12,6 @@ http-request ^https:\/\/api\.chippercash\.com\/v1\/referrals\/code script-path=h
 # 展示入金界面
 http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/showUSDXDeposits.js, requires-body=1
 
+# 跳过人脸认证
+http-response ^https:\/\/auth\.chippercash\.com\/session\/status script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/skipFrozen.js,requires-body=1
+https://auth.chippercash.com/session/status
