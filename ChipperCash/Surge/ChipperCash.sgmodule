@@ -3,7 +3,7 @@
 #!category=Chipper
 
 [MITM]
-hostname = %APPEND% api.chippercash.com auth.chippercash.com
+hostname = %APPEND% api.chippercash.com compliance.chippercash.com
 
 [Script]
 # 展示入金界面
