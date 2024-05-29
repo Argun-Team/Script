@@ -1,16 +1,13 @@
-#!name=Chipper 辅助
-#!desc=1.显示入金界面 2.获取Data
-
+#!name=Chipper辅助 By @niuniujun
+#!desc=1.邮箱过人脸 2.强制USDT入金 By @niuniujun
+#!category=Chipper
 
 [MITM]
 hostname = %APPEND% api.chippercash.com auth.chippercash.com
 
 [Script]
-# 获取Data
-http-request ^https:\/\/api\.chippercash\.com\/v1\/referrals\/code script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/getData.js, requires-body=1
-
 # 展示入金界面
-http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/showUSDXDeposits.js, requires-body=1
+usdt=type=http-response,pattern=^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration, script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/showUSDXDeposits.js, requires-body=1
 
-# 跳过人脸认证
-http-response ^https:\/\/auth\.chippercash\.com\/session\/status script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Shadowrocket/js/skipFrozen.js,requires-body=1
+# 邮箱验证人脸
+frozen=type=http-response,pattern=https://compliance.chippercash.com/account/configuration, script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/skipFrozen.js, requires-body=1
